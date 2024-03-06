@@ -20,7 +20,7 @@ client = OpenAI()
 def generate_response(query):
     stream = client.chat.completions.create(
     model="gpt-3.5-turbo",
-    messages=[{"role": "user", "content": query}],
+    messages=[{"role":"system","content": "Use the following User Input (or previous conversaton if needed) to answer the users question."},{"role": "user", "content": query}],
     stream=True,
     )
     for chunk in stream:
