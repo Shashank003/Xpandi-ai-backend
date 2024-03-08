@@ -78,4 +78,4 @@ def answer_question():
     return Response(answer["output"])
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
